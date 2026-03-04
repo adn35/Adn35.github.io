@@ -4,8 +4,145 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bakaroğlu Nakliyat | İzmir Evden Eve Nakliyat</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: #111;
+      color: white;
+      position: relative;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* ARAMA */
+    .search-box {
+      margin-top: 20px;
+    }
+
+    .search-box input {
+      padding: 12px;
+      width: 250px;
+      max-width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-box button {
+      padding: 12px 18px;
+      border: none;
+      background: #111;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* SABİT BUTONLAR */
+    .phone-btn {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: black;
+      color: white;
+      padding: 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* MOBİL */
+    @media (max-width: 768px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #111;
+        width: 200px;
+        flex-direction: column;
+        padding: 20px;
+        display: none;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
 
   <div class="navbar">
@@ -14,34 +151,30 @@
     <div class="menu-toggle">☰</div>
 
     <div class="nav-links">
-      <a href="index.html">Ana Sayfa</a>
+      <a href="#">Ana Sayfa</a>
       <a href="#">Hakkımızda</a>
       <a href="#">Hizmetler</a>
       <a href="#">İletişim</a>
     </div>
   </div>
 
-  <section style="padding:60px 20px; text-align:center;">
+  <section class="hero">
     <h1>İzmir Evden Eve Nakliyat</h1>
     <p>Profesyonel, güvenilir ve hızlı taşımacılık hizmeti.</p>
 
-    <!-- ARAMA KUTUSU -->
-    <div style="margin-top:30px;">
-      <input 
-        type="text" 
-        id="searchInput" 
-        placeholder="Hizmet ara..." 
-        style="padding:10px; width:250px; max-width:80%; border:1px solid #ccc; border-radius:5px;"
-      >
-      <button 
-        onclick="searchFunction()" 
-        style="padding:10px 15px; background:#111; color:white; border:none; border-radius:5px; cursor:pointer;"
-      >
-        Ara
-      </button>
+    <div class="search-box">
+      <input type="text" placeholder="Hizmet ara...">
+      <button>Ara</button>
     </div>
-
   </section>
+
+  <!-- TELEFON -->
+  <a href="tel:05317887636" class="phone-btn">📞 Ara</a>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/905317887636" target="_blank" class="whatsapp-btn">
+    💬 WhatsApp
+  </a>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -52,20 +185,6 @@
         nav.classList.toggle("active");
       });
     });
-
-    function searchFunction() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-
-      if (input.includes("ev")) {
-        alert("Evden Eve Nakliyat hizmetimiz mevcut.");
-      } 
-      else if (input.includes("ofis")) {
-        alert("Ofis Taşımacılığı hizmetimiz mevcut.");
-      } 
-      else {
-        alert("Aradığınız hizmet bulunamadı.");
-      }
-    }
   </script>
 
 </body>
