@@ -12,7 +12,7 @@
 <div class="navbar">
   <div class="logo">BAKAROĞLU NAKLİYAT</div>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="menu-toggle">☰</div>
 
   <div class="nav-links" id="navLinks">
     <a href="index.html">Ana Sayfa</a>
@@ -62,9 +62,15 @@ WhatsApp
   <p>Telefon: 0531 788 76 36</p>
   <p>© 2026 Tüm Hakları Saklıdır.</p>
 </footer>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+
+  toggle.addEventListener("click", function () {
+    nav.classList.toggle("active");
+  });
+});
+</script>
 </body>
- <script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
-</script> 
+ 
